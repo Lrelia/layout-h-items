@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>巧用负margin, 两边对齐，中间元素平均分布的布局</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.container {
+			margin: 0 auto;
+			width: 100%;
+			overflow: hidden;
+		}
+		.container div {
+			float: left;
+			margin-bottom: -5000px;
+			padding-bottom: 5000px;
+			width: 33.33%;
+		}
+		.left {
+			height: 50px;
+			background-color: rgba(33, 114, 214, 0.8);
+		}
+		.main {
+			height:100px;
+			background-color: rgba(255, 82, 0, 0.8);
+		}
+		.right {
+			height: 30px;
+			background-color: rgba(90, 243, 151, 0.8);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="left">height:50px</div>
+		<div class="main">height:100px, 以最高的为基准，3个div都是100px</div>
+		<div class="right">height:30px</div>
+	</div>
+</body>
+</html>

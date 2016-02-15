@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>巧用负margin, 两边对齐，中间元素平均分布的布局</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.container {
+			width: 500px;
+		}
+		.menu-theme-0 {
+			margin-right: -25px; /* 把父元素宽度假装拉长 */
+			overflow: hidden; /* 隐藏超过显式宽度的部分 */
+		}
+		.menu-theme-0 li {
+			float: left;
+			margin-bottom: 10px;
+			margin-right: 25px;
+			width: 150px;
+			height: 80px;
+			background: silver;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul class="menu-theme-0">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+	<p>注意底下多余margin不能去除，且ul元素的隐式宽度会撑开浏览器</p>
+</body>
+</html>
